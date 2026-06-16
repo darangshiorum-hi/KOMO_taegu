@@ -365,7 +365,7 @@
             <table class="info-grid">
                 <tr>
                     <td class="label">일 시</td>
-                    <td class="value"><strong>2026년 4월 27일(월) ~ 4월 28일(화)</strong> [1박 2일]</td>
+                    <td class="value"><strong>2026년 6월 27일(토) ~ 6월 28일(일)</strong> [1박 2일]</td>
                 </tr>
                 <tr>
                     <td class="label">집결 장소</td>
@@ -435,7 +435,7 @@
 
         <div class="section-title">📅 공식 세부 일정</div>
         <div class="schedule-box">
-            <div class="day-title">1일 차 - 2026년 4월 27일(월)</div>
+            <div class="day-title">1일 차 - 2026년 6월 27일(토)</div>
             <table class="timeline-table">
                 <tr>
                     <td class="time-col">출발 및 미팅</td>
@@ -469,7 +469,34 @@
                     <td class="time-col">저녁 대연회</td>
                     <td class="desc-col">
                         <strong>수면리 숙소 도착 및 우정의 밤 연회 개최</strong>
-                        <p>준비된 바비큐와 활어회를 즐기며 오랜만에 만난 친구들과 정겨운 우정을 나눕니다.</p>
+                        <p>준비된 바비큐와 활어회를 즐기며 오랜만에 만난 친구들과 밤새도록 정겨운 우정을 나눕니다.</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="schedule-box">
+            <div class="day-title day2">2일 차 - 2026년 6월 28일(일)</div>
+            <table class="timeline-table">
+                <tr>
+                    <td class="time-col">09:00 ~ 10:00</td>
+                    <td class="desc-col">
+                        <strong>숙소 내 아침 조식 및 모닝커피 타임</strong>
+                        <p>아침 식사 후 편안한 무드에서 따뜻한 차 한 잔과 함께 상쾌한 하루를 엽니다.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time-col">10:30 ~ 12:00</td>
+                    <td class="desc-col">
+                        <strong>오산 물향기 수목원 대자연 힐링 산책</strong>
+                        <p>맑은 연못과 우거진 메타세쿼이아 숲길 사이를 거닐며 일상의 피로를 정화합니다.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time-col">12:00 ~</td>
+                    <td class="desc-col">
+                        <strong>기념사진 촬영 및 다음 만남 기약 (안전 해산)</strong>
+                        <p>추억 단체 스냅샷 촬영 후 아쉬운 마음을 뒤로하고 안전하게 해산합니다.</p>
                     </td>
                 </tr>
             </table>
@@ -541,7 +568,6 @@
                 }
             }, 4000);
 
-            // 브라우저 자체 저장소(LocalStorage)와 수동 백업본 데이터를 병합하여 로딩
             initData();
         };
 
@@ -552,7 +578,6 @@
             var arrivals = localArr ? JSON.parse(localArr) : [];
             var posts = localPost ? JSON.parse(localPost) : [];
 
-            // 소스코드에 저장된 데이터가 있다면 병합 (중복 제거)
             if(savedArrivals.length > 0 && arrivals.length === 0) { arrivals = savedArrivals; }
             if(savedPosts.length > 0 && posts.length === 0) { posts = savedPosts; }
 
