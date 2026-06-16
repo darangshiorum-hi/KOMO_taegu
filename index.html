@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영친회 2026 야유회 공식 안내장</title>
+    <style>
+        /* 기본 프리미엄 스타일 초기화 */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.8;
+        }
+        
+        /* 상단 슬라이드 및 메인 배너 영역 */
+        .hero {
+            position: relative;
+            height: 520px;
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: brightness(45%) contrast(105%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding-top: 140px;
+        }
+        .hero h1 {
+            font-size: 36pt;
+            font-weight: bold;
+            letter-spacing: -1.5px;
+            margin-bottom: 12px;
+            text-shadow: 2px 4px 12px rgba(0,0,0,0.85);
+            color: #ffffff;
+        }
+        .hero p {
+            font-size: 16pt;
+            color: #f59e0b; 
+            text-shadow: 0 2px 8px rgba(0,0,0,0.75);
+            font-weight: bold;
+        }
+        .hero-badge {
+            display: inline-block;
+            background-color: #dc2626;
+            color: white;
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 11pt;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* 메인 래퍼 */
+        .wrapper {
+            max-width: 1140px;
+            margin: -60px auto 60px auto;
+            position: relative;
+            z-index: 10;
+            padding: 0 20px;
+        }
+        
+        /* 웰컴 인트로 카드 */
+        .overview-card {
+            background: white;
+            border-radius: 20px;
+            padding: 45px;
+            margin-bottom: 45px;
+            border: 1px solid #e2e8f0;
+        }
+        .welcome-text {
+            font-size: 14pt;
+            text-align: center;
+            color: #334155;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+        
+        .highlight-red {
+            color: #ef4444 !important;
+            font-weight: bold !important;
+            text-decoration: underline;
+            background-color: #fef2f2;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        
+        .info-grid {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .info-grid td {
+            padding: 22px;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 12pt;
+        }
+        .info-grid .label {
+            width: 22%;
+            font-weight: bold;
+            color: #0f172a;
+            background-color: #f8fafc;
+            text-align: center;
+        }
+        .info-grid .value {
+            padding-left: 35px;
+            color: #334155;
+        }
+        
+        .section-title {
+            font-size: 24pt;
+            color: #0f172a;
+            margin: 60px 0 30px 0;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #2563eb;
+            font-weight: bold;
+        }
+        
+        /* 명소 및 갤러리 격자 레이아웃 */
+        .card-row {
+            margin-bottom: 45px;
+        }
+        .card-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 25px 0;
+            margin: 0 -25px;
+        }
+        .card-cell {
+            width: 33.33%;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            vertical-align: top;
+            border: 1px solid #e2e8f0;
+        }
+        .card-img {
+            height: 240px;
+            background-size: cover;
+            background-position: center;
+            background-color: #cbd5e1;
+        }
+        .card-body {
+            padding: 26px;
+        }
+        .card-body h4 {
+            font-size: 14pt;
+            color: #0f172a;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+        .card-body p {
+            font-size: 11pt;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* 장보기 분담 테이블 */
+        .shopping-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 20px 0;
+        }
+        .shopping-cell {
+            width: 50%;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            vertical-align: top;
+            border-top: 6px solid #2563eb;
+        }
+        
+        /* 일정표 타임라인 박스 */
+        .schedule-box {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid #e2e8f0;
+        }
+        .day-title {
+            font-size: 14pt;
+            font-weight: bold;
+            color: white;
+            background: #2563eb;
+            padding: 12px 26px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+        .day-title.day2 { 
+            background: #16a34a; 
+        }
+        
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .timeline-table td {
+            padding: 20px 12px;
+            vertical-align: top;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .timeline-table tr:last-child td { border-bottom: none; }
+        .time-col {
+            width: 20%;
+            font-weight: bold;
+            color: #dc2626;
+            font-size: 12pt;
+        }
+        .desc-col strong {
+            font-size: 13.5pt;
+            color: #0f172a;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .desc-col p {
+            font-size: 11pt;
+            color: #475569;
+        }
+
+        /* 소통 공유 센터 위젯 */
+        .widget-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 25px 0;
+            margin: 0 -25px;
+        }
+        .widget-cell {
+            width: 50%;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            vertical-align: top;
+            border: 1px solid #e2e8f0;
+        }
+        .widget-cell h3 {
+            font-size: 16pt;
+            margin-bottom: 25px;
+            color: #0f172a;
+            border-left: 6px solid #2563eb;
+            padding-left: 14px;
+            font-weight: bold;
+        }
+        
+        .input-style {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 11pt;
+            background-color: #f8fafc;
+        }
+        .btn-style {
+            width: 100%;
+            padding: 15px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 12pt;
+            cursor: pointer;
+        }
+        
+        .display-list {
+            margin-top: 30px;
+            border-top: 2px solid #f1f5f9;
+            padding-top: 20px;
+            max-height: 280px;
+            overflow-y: auto;
+        }
+        .list-item {
+            padding: 14px 18px;
+            background: #f8fafc;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            font-size: 11.5pt;
+            border-left: 4px solid #94a3b8;
+            position: relative;
+        }
+        .delete-btn {
+            position: absolute;
+            right: 18px;
+            top: 14px;
+            color: #94a3b8;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-weight: bold;
+            font-size: 12pt;
+        }
+        .delete-btn:hover { color: #ef4444; }
+
+        /* 관리자 보존 박스 스타일 */
+        .admin-box {
+            background-color: #fffbeb;
+            border: 2px dashed #d97706;
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        .admin-box h4 {
+            font-size: 14pt;
+            color: #b45309;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .admin-box p {
+            font-size: 10.5pt;
+            color: #78350f;
+            margin-bottom: 15px;
+        }
+        .code-area {
+            width: 100%;
+            height: 100px;
+            font-family: monospace;
+            font-size: 10pt;
+            padding: 10px;
+            border: 1px solid #f59e0b;
+            background: #fff;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            color: #94a3b8;
+            font-size: 11pt;
+            background: #0f172a;
+            margin-top: 90px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="hero-bg" id="mainHeroBg"></div>
+        <div class="hero-content">
+            <span class="hero-badge">영친회 2026 야유회 공식 안내장</span>
+            <h1>우리가 함께하는 설레는 야유회</h1>
+            <p>"반갑다 친구야! 함께해서 더 좋은 우리들의 시간"</p>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        
+        <div class="overview-card">
+            <div class="welcome-text">
+                그동안 바쁜 일상 속에서 자주 보지 못했던 고향 친구들이 한자리에 모여 따뜻한 정을 나누고자 합니다.<br>
+                유서 깊은 도시 수원과 푸른 오산에서 이틀간 정겨운 추억을 가득 만들어 가세요!
+            </div>
+            
+            <table class="info-grid">
+                <tr>
+                    <td class="label">일 시</td>
+                    <td class="value"><strong>2026년 4월 27일(월) ~ 4월 28일(화)</strong> [1박 2일]</td>
+                </tr>
+                <tr>
+                    <td class="label">집결 장소</td>
+                    <td class="value">수원역 (<span class="highlight-red">하단 소통 센터에 도착 시간을 꼭 공유해 주세요</span>)</td>
+                </tr>
+                <tr>
+                    <td class="label">공식 숙소</td>
+                    <td class="value">경기도 화성시 정남면 수면리 31-1번지 (상단 슬라이드 전경)</td>
+                </tr>
+                <tr>
+                    <td class="label">문의 및 신청</td>
+                    <td class="value">영친회 회장단 및 총무단</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section-title">📍 주요 명소 안내</div>
+        <div class="card-row">
+            <table class="card-table">
+                <tr>
+                    <td class="card-cell">
+                        <div class="card-img" style="background-image: url('./수원화성/medium.jpg');"></div>
+                        <div class="card-body">
+                            <h4>수원 화성 & 성곽길</h4>
+                            <p>유네스코 세계문화유산인 수원화성 화홍문(Buksumun)과 은은하게 빛나는 성곽길을 도란도란 산책하며 유구한 역사를 경험합니다.</p>
+                        </div>
+                    </td>
+                    <td class="card-cell">
+                        <div class="card-img" style="background-image: url('./지동시장/다운로드 (1).jpg');"></div>
+                        <div class="card-body">
+                            <h4>지동시장 투어</h4>
+                            <p>수원의 푸근한 정이 담겨있는 명물 전통시장! 다채로운 볼거리와 맛있는 먹거리를 구경하며 고향의 정취를 가득 느낍니다.</p>
+                        </div>
+                    </td>
+                    <td class="card-cell">
+                        <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=600&auto=format&fit=crop');"></div>
+                        <div class="card-body">
+                            <h4>오산 물향기 수목원</h4>
+                            <p>2일 차 오전, 푸른 대자연과 맑은 연못, 우거진 숲길 사이를 거닐며 일상의 피로를 말끔히 정화하는 최고의 청정 힐링 코스입니다.</p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section-title">🛒 장보기 조 편성 및 장소</div>
+        <div class="card-row">
+            <table class="shopping-table">
+                <tr>
+                    <td class="shopping-cell" style="border-top-color: #dc2626;">
+                        <div class="card-body">
+                            <h4 style="color:#dc2626; font-size:14pt; margin-bottom:8px;">🐟 1진 장보기 조 [수산물 전담]</h4>
+                            <p style="font-size:12pt; margin-bottom:12px; color:#0f172a;"><strong>방문 장소: 선창수산</strong></p>
+                            <p>숙소 이동 전에 싱싱하고 신선한 대형 활어회와 제철 해산물을 선창수산 전문 매장에서 직접 포장하여 숙소로 합류합니다.</p>
+                        </div>
+                    </td>
+                    <td class="shopping-cell" style="border-top-color: #16a34a;">
+                        <div class="card-body">
+                            <h4 style="color:#16a34a; font-size:14pt; margin-bottom:8px;">🥩 2진 장보기 조 [종합 마트 전담]</h4>
+                            <p style="font-size:12pt; margin-bottom:12px; color:#0f172a;"><strong>방문 장소: 오산 대형마트 군</strong></p>
+                            <p>바비큐 필수 육류, 주류, 음료, 필수 소모품 등을 함께 체크하며 구매합니다. (오산 홈플러스 / 오산 롯데마트 / 월드식자재마트 중 최종 선택)</p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section-title">📅 공식 세부 일정</div>
+        <div class="schedule-box">
+            <div class="day-title">1일 차 - 2026년 4월 27일(월)</div>
+            <table class="timeline-table">
+                <tr>
+                    <td class="time-col">출발 및 미팅</td>
+                    <td class="desc-col">
+                        <strong>수원역 순차 집결 및 출발</strong>
+                        <p>하단 공유방에 입력된 시간대별로 만나 수원의 명소로 안전하게 이동합니다.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time-col">점심 식사</td>
+                    <td class="desc-col">
+                        <strong>본수원갈비 갈비탕 만찬</strong>
+                        <p>깊고 진한 맛을 자랑하는 명품 갈비탕으로 든든하게 영양을 보충하며 야유회의 시작을 알립니다.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time-col">역사 문화 탐방</td>
+                    <td class="desc-col">
+                        <strong>수원 화성 행궁, 성곽길 투어 및 지동시장 구경</strong>
+                        <p>아름다운 성벽을 산책하며 우정을 다지고, 정겨운 전통시장의 명물 먹거리를 만끽합니다.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time-col">철저한 준비</td>
+                    <td class="desc-col">
+                        <strong>1진(선창수산) / 2진(대형 종합마트) 장보기 조별 가동</strong>
+                        <p>최고의 야간 연회를 위해 신선식품과 주류 등 장보기 물품을 일사불란하게 구매합니다.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time-col">저녁 대연회</td>
+                    <td class="desc-col">
+                        <strong>수면리 숙소 도착 및 우정의 밤 연회 개최</strong>
+                        <p>준비된 바비큐와 활어회를 즐기며 오랜만에 만난 친구들과 정겨운 우정을 나눕니다.</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 💬 실시간 정보 공유 센터 -->
+        <div class="section-title" id="communication">💬 실시간 정보 공유 센터</div>
+        <div class="widget-table" style="display: table; width: 100%;">
+            <div style="display: table-row;">
+                <div class="widget-cell" style="display: table-cell; width: 50%;">
+                    <h3>⏱️ 수원역 도착 시간 공유방</h3>
+                    <input type="text" id="arrName" class="input-style" placeholder="이름을 입력해 주세요 (예: 김철수)">
+                    <input type="text" id="arrTime" class="input-style" placeholder="도착 정보를 적어주세요 (예: KTX 14:15 도착)">
+                    <button type="button" class="btn-style" onclick="addArrival()">도착 시간 등록하기</button>
+                    
+                    <div class="display-list" id="arrivalList"></div>
+                </div>
+                
+                <div class="widget-cell" style="display: table-cell; width: 50%;">
+                    <h3>📢 가기 전 응원 한마디 게시판</h3>
+                    <input type="text" id="boardName" class="input-style" placeholder="작성자 성명">
+                    <input type="text" id="boardContent" class="input-style" placeholder="친구들에게 남길 한마디 (예: 다들 건강히 만나자!)">
+                    <button type="button" class="btn-style" style="background-color:#16a34a;" onclick="addPost()">응원글 등록하기</button>
+                    
+                    <div class="display-list" id="boardList"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 영구 박제용 데이터 관리 보존함 -->
+        <div class="admin-box">
+            <h4>🔒 [총무님 전용] 데이터 누적 보존함 (서버 무관 방식)</h4>
+            <p>친구들이 내용을 입력하거나 삭제할 때마다 아래 텍스트창의 코드가 자동으로 최신 변경됩니다. 야유회 가기 전에 이 창의 텍스트 전체를 복사해서 index.html 맨 아래 <b>[여기]</b> 칸에 붙여넣어 저장(업로드)하면 모든 친구에게 평생 영구적으로 쌓여서 보입니다!</p>
+            <textarea id="dataBackupArea" class="code-area" readonly onclick="this.select();"></textarea>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>영친회 회장단 및 총무단 올림</p>
+        <p style="margin-top:8px; font-size:10pt; color:#64748b;">Copyright &copy; 2026 영친회. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        var accommodationImages = [
+            "./수면리 숙소/숙소1.png",
+            "./수면리 숙소/숙소2.png",
+            "./수면리 숙소/숙소3.png"
+        ];
+        var currentImgIndex = 0;
+
+        // =================================================================
+        // [여기에 차곡차곡 쌓인 데이터를 붙여넣으시면 회원들에게 평생 유지됩니다!]
+        // =================================================================
+        var savedArrivals = [];
+        var savedPosts = [];
+        // =================================================================
+
+        window.onload = function() {
+            var heroBg = document.getElementById('mainHeroBg');
+            if (heroBg) {
+                heroBg.style.backgroundImage = "url('" + accommodationImages[currentImgIndex] + "')";
+            }
+            
+            setInterval(function() {
+                currentImgIndex = (currentImgIndex + 1) % accommodationImages.length;
+                if (heroBg) {
+                    heroBg.style.backgroundImage = "url('" + accommodationImages[currentImgIndex] + "')";
+                }
+            }, 4000);
+
+            // 브라우저 자체 저장소(LocalStorage)와 수동 백업본 데이터를 병합하여 로딩
+            initData();
+        };
+
+        function initData() {
+            var localArr = localStorage.getItem('youngchin_arr_v6');
+            var localPost = localStorage.getItem('youngchin_post_v6');
+            
+            var arrivals = localArr ? JSON.parse(localArr) : [];
+            var posts = localPost ? JSON.parse(localPost) : [];
+
+            // 소스코드에 저장된 데이터가 있다면 병합 (중복 제거)
+            if(savedArrivals.length > 0 && arrivals.length === 0) { arrivals = savedArrivals; }
+            if(savedPosts.length > 0 && posts.length === 0) { posts = savedPosts; }
+
+            localStorage.setItem('youngchin_arr_v6', JSON.stringify(arrivals));
+            localStorage.setItem('youngchin_post_v6', JSON.stringify(posts));
+
+            renderArrivals();
+            renderPosts();
+            updateBackupCode();
+        }
+
+        function renderArrivals() {
+            var list = JSON.parse(localStorage.getItem('youngchin_arr_v6') || '[]');
+            var container = document.getElementById('arrivalList');
+            if(list.length === 0) {
+                container.innerHTML = '<div class="list-item" style="color:#94a3b8; text-align:center; border-left:none;">등록된 스케줄이 없습니다.</div>';
+                return;
+            }
+            var html = '';
+            for(var i=0; i<list.length; i++) {
+                html += '<div class="list-item"><strong>' + list[i].name + '</strong> : ' + list[i].time + 
+                        '<button class="delete-btn" onclick="deleteArrival(' + i + ')">×</button></div>';
+            }
+            container.innerHTML = html;
+        }
+
+        function renderPosts() {
+            var list = JSON.parse(localStorage.getItem('youngchin_post_v6') || '[]');
+            var container = document.getElementById('boardList');
+            if(list.length === 0) {
+                container.innerHTML = '<div class="list-item" style="color:#94a3b8; text-align:center; border-left:none;">첫 번째 정겨운 한마디를 적어보세요.</div>';
+                return;
+            }
+            var html = '';
+            for(var i=0; i<list.length; i++) {
+                html += '<div class="list-item"><strong>' + list[i].name + '</strong>: ' + list[i].content + 
+                        '<button class="delete-btn" onclick="deletePost(' + i + ')">×</button></div>';
+            }
+            container.innerHTML = html;
+        }
+
+        function addArrival() {
+            var name = document.getElementById('arrName').value;
+            var time = document.getElementById('arrTime').value;
+            if(!name || !time) { alert('이름과 도착 시간을 모두 입력해주세요!'); return; }
+            
+            var list = JSON.parse(localStorage.getItem('youngchin_arr_v6') || '[]');
+            list.push({name: name, time: time});
+            localStorage.setItem('youngchin_arr_v6', JSON.stringify(list));
+            
+            renderArrivals();
+            updateBackupCode();
+            document.getElementById('arrName').value = '';
+            document.getElementById('arrTime').value = '';
+        }
+
+        function addPost() {
+            var name = document.getElementById('boardName').value;
+            var content = document.getElementById('boardContent').value;
+            if(!name || !content) { alert('성함과 메시지 내용을 모두 작성해주세요!'); return; }
+            
+            var list = JSON.parse(localStorage.getItem('youngchin_post_v6') || '[]');
+            list.push({name: name, content: content});
+            localStorage.setItem('youngchin_post_v6', JSON.stringify(list));
+            
+            renderPosts();
+            updateBackupCode();
+            document.getElementById('boardName').value = '';
+            document.getElementById('boardContent').value = '';
+        }
+
+        function deleteArrival(index) {
+            if(!confirm("해당 기록을 삭제하시겠습니까?")) return;
+            var list = JSON.parse(localStorage.getItem('youngchin_arr_v6') || '[]');
+            list.splice(index, 1);
+            localStorage.setItem('youngchin_arr_v6', JSON.stringify(list));
+            renderArrivals();
+            updateBackupCode();
+        }
+
+        function deletePost(index) {
+            if(!confirm("해당 기록을 삭제하시겠습니까?")) return;
+            var list = JSON.parse(localStorage.getItem('youngchin_post_v6') || '[]');
+            list.splice(index, 1);
+            localStorage.setItem('youngchin_post_v6', JSON.stringify(list));
+            renderPosts();
+            updateBackupCode();
+        }
+
+        function updateBackupCode() {
+            var arr = localStorage.getItem('youngchin_arr_v6') || '[]';
+            var pst = localStorage.getItem('youngchin_post_v6') || '[]';
+            var codeText = "savedArrivals = " + arr + ";\nsavedPosts = " + pst + ";";
+            document.getElementById('dataBackupArea').value = codeText;
+        }
+    </script>
+</body>
+</html>
